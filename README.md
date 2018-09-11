@@ -1,28 +1,18 @@
-# NoStarchPress
+# No Starch Press
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/no_starch_press`. To experiment with that code, run `bin/console` for an interactive prompt.
+### A Ruby Gem for finding books published by No Starch Press. 
 
-TODO: Delete this and the text above, and describe your gem
+This Ruby Gem provides a CLI to find books by topics from the No Starch Press web site.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'no_starch_press'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install no_starch_press
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the below and follow the on screen prompts.
+
+    $ no_starch_press
 
 ## Development
 
