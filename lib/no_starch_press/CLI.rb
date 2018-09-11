@@ -6,10 +6,7 @@ class NoStarchPress::CLI
   end 
   
   def list_topics
-    puts "Welcome to No Starch Press!" 
-    puts "1. Ardruino"
-    puts "2. Art & Design"
-    puts "3. General Computing"
+    @topics = NoStarchPress::Topic.all
   end 
   
   def menu 
