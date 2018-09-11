@@ -16,7 +16,7 @@ class NoStarchPress::CLI
     
     input = nil 
     while input != "exit"
-      puts "Enter a number for the topic you want, type list to see the topics or type exit to leave: "
+      puts "Enter a number for the topic you want, type list to see all topics or type exit to leave: "
       input = gets.strip.downcase
       case input
       when "1"
@@ -27,6 +27,8 @@ class NoStarchPress::CLI
         puts "Books on General Computing:"
       when "list"
         list_topics
+      when "exit"
+        break
       else 
         puts "Not sure which topic you want, type list or exit: "
       end
