@@ -7,6 +7,9 @@ class NoStarchPress::CLI
   
   def list_topics
     @topics = NoStarchPress::Topic.all
+    @topics.each.with_index(1) do |topic, i| 
+      puts "#{i}. #{topic.name}"
+    end
   end 
   
   def list_books_by_topic
@@ -18,17 +21,14 @@ class NoStarchPress::CLI
     while input != "exit"
       puts "Enter a number for the topic you want, type list to see all topics or type exit to leave: "
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "Books on Arduino:"
-        @books = NoStarchPress::Book.all
-      when "2"
-        puts "Books on Art and Design:"
-      when "3"
-        puts "Books on General Computing:"
-      when "list"
+      if input.to_i > 0
+        puts @topics[input.to_i - 1].name + " books: "
+        puts @topics[input.to_i - 1].books
+        # books_by_topic = @topics[input.to_i - 1].books.select {|book| book.topic == @topics[input.to_i - 1]}
+        # books_by_topic.each.with_index(1) {|book, i| puts "#{i}. " + book.title}
+      elsif input == "list"
         list_topics
-      when "exit"
+      elsif input == "exit"
         break
       else 
         puts "Not sure which topic you want, type list or exit: "
