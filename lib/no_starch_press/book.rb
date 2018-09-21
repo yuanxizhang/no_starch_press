@@ -14,7 +14,7 @@ class NoStarchPress::Book
   def self.all
     @@all
     
-    puts "1. The Ardruino inventors Guide"
+    puts "1. The Ardruino Inventors Guide"
     puts "2. Ardruino Playground"
     puts "3. Ardruino Workshop"
   end 
