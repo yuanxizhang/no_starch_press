@@ -9,6 +9,9 @@ class NoStarchPress::CLI
     @topics = NoStarchPress::Topic.all
   end 
   
+  def list_books_by_topic
+  end  
+  
   def menu 
     
     input = nil 
@@ -18,6 +21,7 @@ class NoStarchPress::CLI
       case input
       when "1"
         puts "Books on Arduino:"
+        @books = NoStarchPress::Book.all
       when "2"
         puts "Books on Art and Design:"
       when "3"
