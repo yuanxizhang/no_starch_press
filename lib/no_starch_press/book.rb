@@ -18,14 +18,14 @@ class NoStarchPress::Book
     book_1.url = "https://nostarch.com/arduinoinventor"
     book_1.author = "by Brian Huang and Derek Runberg"
     book_1.release_date = "June 2017, 336 pp."
-    book_1.topic = topic_1
+    book_1.topic = "topic_1"
     
     book_2 = self.new  
     book_2.title = "Ardruino Playground"
     book_2.url = "https://nostarch.com/arduinoplayground"
     book_2.author = "by Warren Andrews"
     book_2.release_date = "March 2017, 344 pp."
-    book_2.topic = topic_1
+    book_2.topic = "topic_2"
     @@all
   end 
   

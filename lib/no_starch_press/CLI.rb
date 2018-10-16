@@ -6,7 +6,7 @@ class NoStarchPress::CLI
   end 
   
   def list_topics
-    @topics = NoStarchPress::Topic.all
+    @topics = NoStarchPress::Topic.scrape_topics
     @topics.each.with_index(1) do |topic, i| 
       puts "#{i}. #{topic.name}"
     end
@@ -16,6 +16,7 @@ class NoStarchPress::CLI
   end  
   
   def menu 
+    puts "Welcome to No Starch Press - the finest in geek entertaiment!" 
     
     input = nil 
     while input != "exit"
@@ -23,7 +24,7 @@ class NoStarchPress::CLI
       input = gets.strip.downcase
       if input.to_i > 0
         puts @topics[input.to_i - 1].name + " books: "
-        puts @topics[input.to_i - 1].books
+        puts @topics[input.to_i - 1].books.each {|book| book.title}
         # books_by_topic = @topics[input.to_i - 1].books.select {|book| book.topic == @topics[input.to_i - 1]}
         # books_by_topic.each.with_index(1) {|book, i| puts "#{i}. " + book.title}
       elsif input == "list"
