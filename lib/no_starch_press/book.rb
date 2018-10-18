@@ -1,32 +1,27 @@
 class NoStarchPress::Book
-  attr_accessor :title, :url, :author, :release_date, :topic 
+  attr_accessor :title, :url
+  attr_reader :topic
   @@all = []
   
-  def initialize(title = nil, url = nil, author = nil, release_date = nil, topic = nil)
+  def initialize(title = nil, url = nil, topic = nil)
     @title = title
     @url = url
-    @author = author
-    @release_date = release_date
-    @topic = topic
-    @@all << self
+    self.topic = topic if topic
+    @@all << self unless @@all.include?(self)
   end 
   
+  def topic=(topic)
+    @topic = topic 
+    topic.add_book(self) 
+  end
+  
   def self.all
-    
-    book_1 = self.new  
-    book_1.title = "The Ardruino Inventors Guide"
-    book_1.url = "https://nostarch.com/arduinoinventor"
-    book_1.author = "by Brian Huang and Derek Runberg"
-    book_1.release_date = "June 2017, 336 pp."
-    book_1.topic = "topic_1"
-    
-    book_2 = self.new  
-    book_2.title = "Ardruino Playground"
-    book_2.url = "https://nostarch.com/arduinoplayground"
-    book_2.author = "by Warren Andrews"
-    book_2.release_date = "March 2017, 344 pp."
-    book_2.topic = "topic_2"
-    @@all
+    @@all.uniq
   end 
+  
+  def self.clear_all 
+    @@all.clear
+  end 
+  
   
 end
