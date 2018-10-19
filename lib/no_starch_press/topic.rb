@@ -25,7 +25,7 @@ class NoStarchPress::Topic
     doc.css("div.views-field span.field-content a").each do |element|
       topic = self.new
       topic.name = element.text.strip
-      topic.url = "https://nostarch.com#{element.attribute("href").text}"
+      topic.url = "https://nostarch.com#{element.attribute("href").text.strip}"
       topic.books = topic.get_books
       @@all << topic if ( topic.name != "Gift Certificates" and (not @@all.include?(topic)))
     end 
@@ -40,7 +40,7 @@ class NoStarchPress::Topic
     doc.css("div.product-title a").each do |element|
       book = NoStarchPress::Book.new
       book.title = element.text.strip
-      book.url = "https://nostarch.com#{element.attribute("href").text}"
+      book.url = "https://nostarch.com#{element.attribute("href").text.strip}"
       book.topic = self if book.topic == nil
     
       @books << book unless @books.include?(book)

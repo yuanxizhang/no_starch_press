@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require './lib/no_starch_press'
+require_relative '../lib/no_starch_press'
 
 NoStarchPress::CLI.new.call
