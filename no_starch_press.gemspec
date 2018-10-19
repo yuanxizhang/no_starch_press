@@ -6,9 +6,14 @@ require "no_starch_press/version"
 Gem::Specification.new do |spec|
   spec.name          = "no_starch_press"
   spec.version       = NoStarchPress::VERSION
-  spec.authors       = ["'Yancy Zhang'"]
-  spec.email         = ["'yuanxi.zhang@gmail.com'"]
-
+  spec.authors       = ["Yancy Zhang"]
+  spec.files         = [
+                        "lib/no_starch_press/book.rb",
+                        "lib/no_starch_press/CLI.rb",
+                        "lib/no_starch_press/topic.rb",
+                        "lib/no_starch_press/version.rb",
+                        "lib/no_starch_press.rb"
+                        ]
   spec.summary       = "A Ruby Gem for finding books published by No Starch Press."
   spec.description   = "This Ruby Gem provides a CLI to find books by topics from the No Starch Press web site."
   spec.homepage      = "https://github.com/yuanxizhang/no_starch_press"
