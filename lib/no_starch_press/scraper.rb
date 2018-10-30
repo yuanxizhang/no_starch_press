@@ -19,7 +19,7 @@ class NoStarchPress::Scraper
       book.title = element.text.strip
       book.url = "https://nostarch.com#{element.attribute("href").text.strip}"
       book.topic = topic
-      topic.books << book
+      topic.books << book unless topic.books.include?(book)
     end
   end
 end
