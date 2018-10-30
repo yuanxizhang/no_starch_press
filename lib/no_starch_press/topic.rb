@@ -8,11 +8,11 @@ class NoStarchPress::Topic
     @name = name
     @url = url
     @books = []
-    @@all << self if ( self.name != "Gift Certificates")
+    @@all << self if ( !@@all.include?(self) and self.name != "Gift Certificates" )
   end
 
   def self.all
-    @@all
+    @@all.uniq
   end
 
   def add_book(book)
